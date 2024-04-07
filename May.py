@@ -98,7 +98,7 @@ def drawPage3(app):
     instructionLines = instruction.splitlines()
     for i in range (len(instructionLines)):
         instructionLine = instructionLines[i]
-        drawLabel(instructionLine, 500, 200 + i * 30, size = 30, fill = 'green', border = 10, font = 'monospace')
+        drawLabel(instructionLine, 400, 200 + i * 30, size = 30, fill = 'darkGreen', borderWidth = 10, font = 'monospace')
 
 def drawPage4(app):
     pass
