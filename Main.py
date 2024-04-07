@@ -193,8 +193,6 @@ def redrawAll(app):
         drawPage8(app)
     elif app.page9:
         drawPage9(app)
-    # elif app.page123:
-        # drawPage123(app)
     elif app.pageQuiz:
         drawPageQuiz(app)
     elif app.page10:
@@ -338,7 +336,7 @@ def onMousePress(app,mouseX,mouseY):
         app.canDrawChar3=False
     if (550>=mouseX>=400) and (525>=mouseY>=375):
         app.canDrawChar1=True
-            #app.base=True#start the pizza game
+
         app.winner_game1='Charlie'
         if app.page4:
             app.page4=False
@@ -353,7 +351,7 @@ def onMousePress(app,mouseX,mouseY):
     elif (550>=mouseX>=400) and (700>=mouseY>=550):
         app.canDrawChar3=True
             #start the pizza game
-        # print(app.result)
+       
         app.winner_game1='Chris'
         if app.page4:
             app.page4=False
