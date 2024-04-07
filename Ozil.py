@@ -78,9 +78,7 @@ def onAppStart(app):
     app.shoes=[clo.unishoes,clo.cuteshoes,clo.sexyshoes,clo.elegshoes]
     app.shoes2=None
 
-    app.dressBackground = Image.open('dressBackground.jpeg')
-    app.dressBackground = CMUImage(app.dressBackground)
-
+    
 def redrawAll(app): 
    
     drawRect(900,700,100,100,align='center',fill='black')
@@ -104,7 +102,7 @@ def redrawAll(app):
             drawLabel(f'Accuracy: {100-sum(app.result)//8}',135,50,size=35)
             drawLabel(f'Eveness: None',135,100,size=35) 
     else: 
-        drawImage(app.dressBackground, 0, 0, width = 1000, height = 800)
+        
         
         drawImage(CMUImage(Image.open('Naked.png')),150,110,width=150,height=450)
         if clo.dress==None:
