@@ -114,8 +114,13 @@ def onAppStart(app):
     app.score_game_3_round_4_b4_add=0
     app.score_game_3=dict()
     app.total_score_game3={'Charlie':0,'Charles':0,'Chris':0,'Chase':0}
-    
+    app.sound1 = loadSound("weddingSong/bulletSound.mp3")
 
+    app.sound1.play(restart = True)
+    
+ def loadSound(relativePath):
+    absolutePath = os.path.abspath(relativePath)
+    url = pathlib.Path(absolutionPath).as_uri()
 class A: 
     def __init__(self): 
         self.name='Charlie'
@@ -173,7 +178,6 @@ def redrawAll(app):
     elif app.page9:
         drawPage9(app)
     elif app.pageQuiz:
-        print('yes')
         drawPageQuiz(app)
     elif app.page10:
         drawPage10(app)
@@ -259,7 +263,7 @@ def onMouseDrag(app, mouseX, mouseY):
 
 def onMousePress(app,mouseX,mouseY):
     #test
-    if app.pageQuiz and not app.page1 and not app.page2 and not app.page3 and not app.page4 and not app.page5 and not app.page6 and not app.page7 and not app.page8 and not app.page9 and not app.pageClothest:
+    if app.pageQuiz and not app.page1 and not app.page2 and not app.page3 and not app.page4 and not app.page5 and not app.page6 and not app.page7 and not app.page8 and not app.page9 and not app.pageCloset:
         MousePressQuiz(app, mouseX, mouseY)
 
     if 0<=mouseX<=200 and 0<=mouseY<=100: 
@@ -344,9 +348,7 @@ def onMousePress(app,mouseX,mouseY):
         # print(app.scores)
         if app.base: 
             app.base=False
-#  def loadSound(relativePath):
-#     absolutePath = os.path.abspath(relativePath)
-#     url = pathlib.Path(absolutionPath).as_uri()
+
     if clo.dress==None and clo.shirt==None and clo.shoes==None: 
         app.dx = mouseX
         app.dy = mouseY
