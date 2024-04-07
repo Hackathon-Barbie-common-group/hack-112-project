@@ -139,7 +139,8 @@ def drawPage4(app):
 
 def drawPage5(app): 
     drawImage(app.wedding, 0, 0, width = 1000, height = 800)
-    drawImage(app.sue, 100, 300, width = 200, height = 500)
+    drawImage(app.sue, 300, 300, width = 200, height = 500)
+
 
 def onMousePress(app,mouseX,mouseY): 
     if 700<=mouseX<=900 and 650<=mouseY<=750: 
