@@ -24,6 +24,17 @@ def onAppStart(app):
     app.sueFinal = CMUImage(app.sueFinal)
     app.background4 = Image.open('photo/background4.png')
     app.background4 = CMUImage(app.background4)
+    app.Char1=Image.open('photo/2.PNG')
+    app.Char1=CMUImage(app.Char1)
+    app.Char2=Image.open('photo/3.PNG')
+    app.Char2=CMUImage(app.Char2)
+    app.Char3=Image.open('photo/6.PNG')
+    app.Char3=CMUImage(app.Char3)
+    app.Char4=Image.open('photo/8.PNG')
+    app.Char4=CMUImage(app.Char4)
+    app.backgroundImage5 = Image.open('photo/background5.png')
+    app.backgroundImage5 = CMUImage(app.backgroundImage5)
+
     
     
 def redrawAll(app):
@@ -103,8 +114,12 @@ def drawPage3(app):
         drawLabel(instructionLine, 400, 100 + i * 30, size = 30, fill = 'darkGreen', bold = True, font = 'monospace')
 
 def drawPage4(app):
+    drawImage(app.backgroundImage5,0,0, width = 1000, height = 800)
+    drawImage(app.Char1,-50,300,width=315,height=405)
+    drawImage(app.Char2,300,300,width=225,height=405)
+    drawImage(app.Char3,500,300,width=234,height=405)
+    drawImage(app.Char4,750,300,width=225,height=405)
     
-    pass
 
 def drawPage5(app): 
     pass
@@ -121,6 +136,11 @@ def onMousePress(app,mouseX,mouseY):
             app.page4=False
         elif app.page5: 
             app.page5=False
+
+
+
+
+
 
 def main():
     runApp()
