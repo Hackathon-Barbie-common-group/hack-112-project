@@ -13,6 +13,8 @@ def onAppStart(app):
     app.textBox1 = CMUImage(app.textBox1)
     app.backgroundImage2 = Image.open('photo/background2')
     app.backgroundImage2 = CMUImage(app.backgroundImage2)
+    # app.textBox = Image.open('photo/textbox1.PNG')
+    # app.textBox = CMUImage(app.textBox)
     
     
 def redrawAll(app):
@@ -31,9 +33,11 @@ def drawPage1(app):
         112 is so hard,
         I wish that I could have date. 
         I think I might have four options.'''
+    drawImage(app.textBox1, 550, 412, align = 'center')
     lines = text.splitlines()
     for i in range (len(lines)):
         line = lines[i]
+        
         drawLabel(line, 500, 350 + i + i * 30, size = 15, fill = 'black', font= 'monospace')
     
     
