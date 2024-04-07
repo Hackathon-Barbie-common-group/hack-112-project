@@ -2,13 +2,15 @@ from cmu_graphics import *
 from PIL import Image
 import os, pathlib
 
+
+
 def onAppStart(app): 
     app.width=1000
     app.height=800
-    app.page1=False
-    app.page2=False
-    app.page3=False
-    app.page4=False
+    app.page1=True
+    app.page2=True
+    app.page3=True
+    app.page4=True
     app.page5=True
     app.backgroundImage = Image.open("image/background1.jpeg")
     app.backgroundImage = CMUImage(app.backgroundImage)
@@ -37,7 +39,10 @@ def onAppStart(app):
     app.wedding = Image.open('photo/wedding.png')
     app.wedding = CMUImage(app.wedding)
 
-    
+#  def loadSound(relativePath):
+#     absolutePath = os.path.abspath(relativePath)
+#     url = pathlib.Path(absolutionPath).as_uri()
+       
     
 def redrawAll(app):
     if app.page1:
@@ -154,10 +159,6 @@ def onMousePress(app,mouseX,mouseY):
             app.page4=False
         elif app.page5: 
             app.page5=False
-
-
-
-
 
 
 def main():
