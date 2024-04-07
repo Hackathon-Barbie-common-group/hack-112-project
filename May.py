@@ -9,7 +9,7 @@ def onAppStart(app):
     app.backgroundImage = CMUImage(app.backgroundImage)
     app.sue = Image.open("photo/10.PNG")
     app.sue = CMUImage(app.sue)
-    app.textBox1 = Image.open("photo/textbox1.PNG")
+    app.textBox1 = Image.open("photo/texbox1.png")
     app.textBox1 = CMUImage(app.textBox1)
     app.backgroundImage2 = Image.open('photo/background2')
     app.backgroundImage2 = CMUImage(app.backgroundImage2)
@@ -28,12 +28,13 @@ def drawPage1(app):
     # imageWidth, imageHeight = getImageSize(app.textBox1)
     # print(imageWidth, imageHeight)
     # drawImage(app.textBox1, 300, 350, width = 280, height = 100)
-    drawRect(550, 412, 500, 100, align = 'center', opacity = 80, fill = 'white')
+    # drawRect(550, 412, 500, 100, align = 'center', opacity = 80, fill = 'white')
     text = '''
         112 is so hard,
         I wish that I could have date. 
         I think I might have four options.'''
-    drawImage(app.textBox1, 550, 412, align = 'center')
+    
+    drawImage(app.textBox1, 550, 412, align = 'center', width = 500, height = 300)
     lines = text.splitlines()
     for i in range (len(lines)):
         line = lines[i]
