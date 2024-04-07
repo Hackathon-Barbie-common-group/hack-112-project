@@ -119,6 +119,20 @@ def drawPage4(app):
     drawImage(app.Char2,300,300,width=225,height=405)
     drawImage(app.Char3,500,300,width=234,height=405)
     drawImage(app.Char4,750,300,width=225,height=405)
+    drawRect(100, 80, 800, 80, fill = 'white', opacity = 80)
+    drawLabel('Babe, are you my soulmate~',500,120,size=40,font='monospace',fill='paleVioletRed', bold=True)
+    drawRect(200, 175, 600, 125, fill = 'white', opacity = 80)
+    quizInstruction = '''
+                        Babe, I am looking for someone who can 
+                        really understand me and my major,
+                        can you answer these questions for me?'''
+    quizLines = quizInstruction.splitlines()
+    for i in range (len(quizLines)):
+        quizLine = quizLines[i]
+        
+        drawLabel(quizLine, 400, 175 + i * 30, fill = 'paleVioletRed', size = 30)
+    drawRect(700, 650, 200, 100, fill = 'pink', opacity = 80, border = 'lightCoral', borderWidth = 10)
+    drawLabel('Continue', 800, 700, fill = 'white', size = 30) 
     
 
 def drawPage5(app): 
