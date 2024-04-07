@@ -20,8 +20,10 @@ def onAppStart(app):
     # app.textBox = CMUImage(app.textBox)
     app.coffeeBackground = Image.open('photo/coffeeBackground')
     app.coffeeBackground = CMUImage(app.coffeeBackground)
-    app.sueFinal = Image.open('photo/sue finals/PNG')
+    app.sueFinal = Image.open('photo/suefinals.PNG')
     app.sueFinal = CMUImage(app.sueFinal)
+    app.background4 = Image.open('photo/background4.png')
+    app.background4 = CMUImage(app.background4)
     
     
 def redrawAll(app):
@@ -73,7 +75,17 @@ def drawPage2(app):
     drawLabel('Continue', 800, 700, fill = 'white', size = 30)
 
 def drawPage3(app): 
-    drawImage(app.sueFinals, 100, 300, width = 200, height = 500)
+    drawImage(app.background4, 0, 0, width = 1000, height = 800)
+    drawImage(app.sueFinal, 100, 300, width = 200, height = 500)
+    text = '''
+        Finally finished my finals, 
+        I want to have a sweet date with my boys'''
+    
+    drawImage(app.textBox1, 550, 412, align = 'center', width = 500, height = 300)
+    lines = text.splitlines()
+    for i in range (len(lines)):
+        line = lines[i]
+        drawLabel(line, 500, 350 + i + i * 30, size = 15, fill = 'black', font= 'monospace')
 
 
 
