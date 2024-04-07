@@ -7,10 +7,6 @@ def onAppStart(app):
 def redrawAll(app): 
     drawRect(100,100,100,100,fill='black')
 
-    
-
-
-
 def main():
     runApp()
 
