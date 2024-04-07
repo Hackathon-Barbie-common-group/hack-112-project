@@ -5,7 +5,6 @@ class Pizza:
     def __init__(self): 
         self.time=0
 
-<<<<<<< Updated upstream
 class Clothes: 
     def __init__(self): 
         self.unidress=CMUImage(Image.open('unidress.png'))
@@ -43,8 +42,6 @@ class D:
     def __init__(self): 
         self.well=None
 
-=======
->>>>>>> Stashed changes
 pizza=Pizza()
 
 def onAppStart(app):
@@ -54,7 +51,6 @@ def onAppStart(app):
     app.base=True
     app.topping=False
     app.stove=False
-<<<<<<< Updated upstream
     app.curr1 = None
     app.curr2 = None
     app.curr3 = None
@@ -65,11 +61,6 @@ def onAppStart(app):
     app.dy = None
     app.ex = None
     app.ey = None
-=======
-    app.curr=None
-    app.cx = None
-    app.cy = None
->>>>>>> Stashed changes
     app.basecake=CMUImage(Image.open('plain-pizza-clipart.png'))
     app.ingre=[CMUImage(Image.open('WechatIMG79.jpg')),
                 CMUImage(Image.open('WechatIMG78.jpg')),CMUImage(Image.open('WechatIMG82.jpg'))]
@@ -80,7 +71,6 @@ def onAppStart(app):
     app.eveness=[0,0,0]
     app.dis=[]
     app.distribution=0
-<<<<<<< Updated upstream
     app.dress=[clo.unidress,clo.cutedress,clo.sexydress,clo.elegdress]
     app.dress2=None
     app.shirt=[clo.unishirt,clo.cuteshirt,clo.sexyshirt,clo.elegshirt]
@@ -88,14 +78,8 @@ def onAppStart(app):
     app.shoes=[clo.unishoes,clo.cuteshoes,clo.sexyshoes,clo.elegshoes]
     app.shoes2=None
 
-    
 def redrawAll(app): 
-   
     drawRect(900,700,100,100,align='center',fill='black')
-=======
-
-def redrawAll(app): 
->>>>>>> Stashed changes
     if app.base:
         drawImage(app.basecake,500,300,width=500,height=500,align='center')
         for i in range(3):
@@ -104,29 +88,19 @@ def redrawAll(app):
             drawCircle(k[0],k[1],5,fill='black')
         for j in app.toppings: 
             drawImage(j[0],j[1],j[2],width=80,height=80,align='center')
-<<<<<<< Updated upstream
         if app.curr1!=None: 
             drawImage(app.curr1,app.cx,app.cy,width=80,height=80,align='center')
-=======
-        if app.curr!=None: 
-            drawImage(app.curr,app.cx,app.cy,width=80,height=80,align='center')
->>>>>>> Stashed changes
         if app.score==[]: 
             drawLabel(f'Accuracy: {100}',135,50,size=35) 
             drawLabel(f'Eveness: None',135,100,size=35) 
         elif len(app.toppings)==10:
-<<<<<<< Updated upstream
             drawLabel(f'Accuracy: {100-sum(app.result)//8}',135,50,size=35)
-=======
->>>>>>> Stashed changes
             drawLabel(f'Eveness: {app.distribution}',135,100,size=35) 
         elif app.score!=[]:
             drawLabel(f'Accuracy: {100-sum(app.result)//8}',135,50,size=35)
             drawLabel(f'Eveness: None',135,100,size=35) 
-<<<<<<< Updated upstream
     else: 
-        
-        
+        drawRect(0,0,1000,800,fill='black')
         drawImage(CMUImage(Image.open('Naked.png')),150,110,width=150,height=450)
         if clo.dress==None:
             drawImage(CMUImage(Image.open('skirt.png')),500,110,width=450,height=600)
@@ -135,11 +109,11 @@ def redrawAll(app):
             drawImage(CMUImage(Image.open('clothes.png')),500,110,width=450,height=600)
         elif clo.shoes==None: 
             drawImage(clo.dress,230,425,width=135,height=110,align='center')
-            drawImage(clo.shirt,220,325,width=150,height=125,align='center')
+            drawImage(clo.shirt,235,335,width=150,height=125,align='center')
             drawImage(CMUImage(Image.open('shoes.png')),500,110,width=450,height=600)
         else:
             drawImage(clo.dress,230,425,width=135,height=110,align='center')
-            drawImage(clo.shirt,220,325,width=150,height=125,align='center')
+            drawImage(clo.shirt,235,335,width=150,height=125,align='center')
             drawImage(clo.shoes,230,560,width=100,height=110,align='center')
 
             
@@ -154,111 +128,10 @@ def onMouseDrag(app, mouseX, mouseY):
             app.curr1=app.ingre[1]
         elif 710<=app.cx<=810 and 600<=app.cy<=700: 
             app.curr1=app.ingre[2]
-=======
-        
-        
-        
-def onMouseDrag(app, mouseX, mouseY):
-    app.cx = mouseX
-    app.cy = mouseY
-    if 110<=app.cx<=210 and 600<=app.cy<=700: 
-        app.curr=app.ingre[0]
-    elif 410<=app.cx<=510 and 600<=app.cy<=700: 
-        app.curr=app.ingre[1]
-    elif 710<=app.cx<=810 and 600<=app.cy<=700: 
-        app.curr=app.ingre[2]
->>>>>>> Stashed changes
     
 
 def distance(x0,y0,x1,y1): 
     return int(((x1-x0)**2+(y0-y1)**2)**0.5)
-<<<<<<< Updated upstream
-=======
-
-
-def onMouseRelease(app, mouseX, mouseY):
-    if app.curr!=None and [app.curr,mouseX,mouseY] not in app.toppings:
-        app.toppings+=[[app.curr,mouseX,mouseY]]
-    app.curr=None
-    for i in app.toppings: 
-        smallest=[]
-        for j in app.answers: 
-            smallest+=[distance(i[1],i[2],j[0],j[1])] 
-        app.score+=[min(smallest)]
-    if len(app.toppings)<10: 
-        for i in app.toppings: 
-            if i[0]==app.ingre[0]: 
-                app.eveness[0]+=1
-            elif i[0]==app.ingre[1]: 
-                app.eveness[1]+=1
-            elif i[0]==app.ingre[2]: 
-                app.eveness[2]+=1
-
-def onMouseRelease(app, mouseX, mouseY):
-    if app.curr!=None and [app.curr,mouseX,mouseY] not in app.toppings:
-        app.toppings+=[[app.curr,mouseX,mouseY]]
-    app.curr=None
-    for i in app.toppings: 
-        smallest=[]
-        for j in app.answers: 
-            smallest+=[distance(i[1],i[2],j[0],j[1])] 
-        app.score+=[min(smallest)]
-    app.result=app.score[len(app.score)-len(app.toppings):]
-    app.eveness=helper1(app.toppings,[0,0,0],app.ingre)
-    if sorted(app.eveness)==[3,3,4]:
-        app.distribution=100
-    elif sorted(app.eveness)==[2,3,5]:
-        app.distribution=93
-    elif sorted(app.eveness)==[2,4,4]:
-        app.distribution=97
-    elif sorted(app.eveness)==[2,2,6]:
-        app.distribution=90
-    elif sorted(app.eveness)==[1,2,7]:
-        app.distribution=87
-    elif sorted(app.eveness)==[1,3,6]:
-        app.distribution=80
-    elif sorted(app.eveness)==[1,4,5]:
-        app.distribution=83
-    elif sorted(app.eveness)==[0,5,5]:
-        app.distribution=77
-    elif sorted(app.eveness)==[0,4,6]:
-        app.distribution=73
-    elif sorted(app.eveness)==[0,3,7]:
-        app.distribution=70
-    elif sorted(app.eveness)==[0,2,8]:
-        app.distribution=67
-    else: 
-        app.distribution=60
-    
-def helper1(L,res,M):
-    if L==[]: 
-        return res
-    else: 
-        num=L[0]
-        rest=L[1:]
-        if num[0]==M[0]: 
-            res[0]+=1
-        elif num[0]==M[1]: 
-            res[1]+=1
-        elif num[0]==M[2]: 
-            res[2]+=1
-        return helper1(rest,res,M)
-
-
-
-def onStep(app): 
-    if app.stove: 
-        pizza.time+=1
-    
-
-def stove(app): 
-    if app.stove: 
-        pizza.time+=1
-
-def onKeyPress(app,keys): 
-    if keys=='space': 
-        app.stove=not app.stove 
->>>>>>> Stashed changes
 
 def onMousePress(app,mouseX,mouseY): 
     if clo.dress==None and clo.shirt==None and clo.shoes==None: 
@@ -289,15 +162,17 @@ def onMousePress(app,mouseX,mouseY):
     elif clo.dress!=None and clo.shirt!=None and clo.shoes==None: 
         app.fx = mouseX
         app.fy = mouseY
-        if 110<=app.fx<=210 and 560<=app.fy<=680: 
-            app.curr4=app.shoes[0]
-        elif 310<=app.fx<=410 and 600<=app.fy<=700: 
-            app.curr4=app.shoes[1]
-        elif 510<=app.fx<=690 and 600<=app.fy<=750: 
+        if 800<=app.fx<=870 and 280<=app.fy<=390: 
             app.curr4=app.shoes[2]
+        elif 650<=app.fx<=760 and 270<=app.fy<=420: 
+            app.curr4=app.shoes[0]
+        elif 650<=app.fx<=760 and 500<=app.fy<=600: 
+            app.curr4=app.shoes[3]
         elif 800<=app.fx<=870 and 400<=app.fy<=560: 
             app.curr4=app.shoes[1]
+        app.shoes=[clo.unishoes,clo.cuteshoes,clo.sexyshoes,clo.elegshoes]
         clo.shoes=app.curr4
+        print(clo.shoes)
     if 850<=mouseX<=950 and 650<=mouseY<=750: 
         if app.base: 
             app.base=False
