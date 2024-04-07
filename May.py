@@ -24,7 +24,8 @@ def drawPage1(app):
     drawImage(app.sue, 100, 300, width = 200, height = 500)
     imageWidth, imageHeight = getImageSize(app.textBox1)
     print(imageWidth, imageHeight)
-    drawImage(app.textBox1, 300, 350, width = 280, height = 100)
+    # drawImage(app.textBox1, 300, 350, width = 280, height = 100)
+
 
     
 
