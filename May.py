@@ -7,7 +7,9 @@ def onAppStart(app):
     app.height=800
     app.page1=False
     app.page2=False
-    app.page3=True
+    app.page3=False
+    app.page4=True
+    app.page5=True
     app.backgroundImage = Image.open("image/background1.jpeg")
     app.backgroundImage = CMUImage(app.backgroundImage)
     app.sue = Image.open("photo/10.PNG")
@@ -33,8 +35,10 @@ def redrawAll(app):
         drawPage2(app)
     elif app.page3: 
         drawPage3(app)
-    else:
+    elif app.page4:
         drawPage4(app)
+    elif app.page5:
+        drawPage5(app)
     
    
 
@@ -98,12 +102,13 @@ def drawPage3(app):
     instructionLines = instruction.splitlines()
     for i in range (len(instructionLines)):
         instructionLine = instructionLines[i]
-        drawLabel(instructionLine, 400, 200 + i * 30, size = 30, fill = 'darkGreen', borderWidth = 10, font = 'monospace')
+        drawLabel(instructionLine, 400, 100 + i * 30, size = 30, fill = 'darkGreen', bold = True, font = 'monospace')
 
 def drawPage4(app):
     pass
 
-
+def drawPage5(app): 
+    drawLabel('2b',300,300,size=50)
 
 def onMousePress(app,mouseX,mouseY): 
     if 700<=mouseX<=900 and 650<=mouseY<=750: 
@@ -113,6 +118,10 @@ def onMousePress(app,mouseX,mouseY):
             app.page2=False
         elif app.page3: 
             app.page3=False
+        elif app.page4: 
+            app.page4=False
+        elif app.page5: 
+            app.page5=False
 
 def main():
     runApp()
