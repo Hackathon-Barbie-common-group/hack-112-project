@@ -2,7 +2,10 @@ from cmu_graphics import *
 from PIL import Image
 import os, pathlib
 
-
+def loadSound(relativePath):
+    absolutePath = os.path.abspath(relativePath)
+    url = pathlib.Path(absolutePath).as_uri()
+    return Sound(url)
 
 def onAppStart(app): 
     app.width=1000
@@ -38,12 +41,10 @@ def onAppStart(app):
     app.backgroundImage5 = CMUImage(app.backgroundImage5)
     app.wedding = Image.open('photo/wedding.png')
     app.wedding = CMUImage(app.wedding)
+    app.sound1 = loadSound("sounds/weddingSong.mp3")
+    app.sound1.play(restart = True)
+   
 
-#  def loadSound(relativePath):
-#     absolutePath = os.path.abspath(relativePath)
-#     url = pathlib.Path(absolutionPath).as_uri()
-       
-    
 def redrawAll(app):
     if app.page1:
         drawPage1(app)
