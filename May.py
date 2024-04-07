@@ -18,8 +18,6 @@ def onAppStart(app):
     app.textBox1 = CMUImage(app.textBox1)
     app.backgroundImage2 = Image.open('photo/background2')
     app.backgroundImage2 = CMUImage(app.backgroundImage2)
-    # app.textBox = Image.open('photo/textbox1.PNG')
-    # app.textBox = CMUImage(app.textBox)
     app.coffeeBackground = Image.open('photo/coffeeBackground')
     app.coffeeBackground = CMUImage(app.coffeeBackground)
     app.sueFinal = Image.open('photo/suefinals.PNG')
@@ -105,7 +103,7 @@ def drawPage3(app):
         drawLabel(instructionLine, 400, 100 + i * 30, size = 30, fill = 'darkGreen', bold = True, font = 'monospace')
 
 def drawPage4(app):
-
+    
     pass
 
 def drawPage5(app): 
