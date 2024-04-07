@@ -9,8 +9,9 @@ def onAppStart(app):
     app.backgroundImage = CMUImage(app.backgroundImage)
     app.sue = Image.open("photo/10.PNG")
     app.sue = CMUImage(app.sue)
-    app.textBox1 = Image.open("image/textbox1.png")
+    app.textBox1 = Image.open("photo/textbox1.PNG")
     app.textBox1 = CMUImage(app.textBox1)
+    
     
 
 def redrawAll(app):
