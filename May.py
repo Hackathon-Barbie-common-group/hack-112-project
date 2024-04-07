@@ -8,7 +8,7 @@ def onAppStart(app):
     app.page1=False
     app.page2=False
     app.page3=False
-    app.page4=True
+    app.page4=False
     app.page5=True
     app.backgroundImage = Image.open("image/background1.jpeg")
     app.backgroundImage = CMUImage(app.backgroundImage)
@@ -34,6 +34,8 @@ def onAppStart(app):
     app.Char4=CMUImage(app.Char4)
     app.backgroundImage5 = Image.open('photo/background5.png')
     app.backgroundImage5 = CMUImage(app.backgroundImage5)
+    app.wedding = Image.open('photo/wedding.png')
+    app.wedding = CMUImage(app.wedding)
 
     
     
@@ -136,7 +138,8 @@ def drawPage4(app):
     
 
 def drawPage5(app): 
-    pass
+    drawImage(app.wedding, 0, 0, width = 1000, height = 800)
+    drawImage(app.sue, 100, 300, width = 200, height = 500)
 
 def onMousePress(app,mouseX,mouseY): 
     if 700<=mouseX<=900 and 650<=mouseY<=750: 
