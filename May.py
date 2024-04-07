@@ -5,6 +5,7 @@ import os, pathlib
 def onAppStart(app): 
     app.width=1000
     app.height=800
+    app.opening=False
     app.backgroundImage = Image.open("image/background1.jpeg")
     app.backgroundImage = CMUImage(app.backgroundImage)
     app.sue = Image.open("photo/10.PNG")
@@ -18,7 +19,11 @@ def onAppStart(app):
     
     
 def redrawAll(app):
-    drawPage1(app)
+    if app.opening:
+        drawPage1(app)
+    else: 
+        drawPage2(app)
+    
    
 
 def drawPage1(app):
@@ -38,11 +43,17 @@ def drawPage1(app):
     lines = text.splitlines()
     for i in range (len(lines)):
         line = lines[i]
-        
         drawLabel(line, 500, 350 + i + i * 30, size = 15, fill = 'black', font= 'monospace')
     
+    drawRect(700, 650, 200, 100, fill = 'pink', opacity = 80, border = 'lightCoral', borderWidth = 10)
+    drawLabel('Continue', 800, 700, fill = 'white', size = 30)
     
-    
+def drawPage2(app): 
+
+
+def onMousePress(app,mouseX,mouseY): 
+    if 700<=mouseX<=900 and 650<=mouseY<=750: 
+        app.opening=False
 
 def main():
     runApp()
