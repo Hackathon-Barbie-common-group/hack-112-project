@@ -33,6 +33,8 @@ def redrawAll(app):
         drawPage2(app)
     elif app.page3: 
         drawPage3(app)
+    else:
+        drawPage4(app)
     
    
 
@@ -79,14 +81,27 @@ def drawPage3(app):
     drawImage(app.sueFinal, 100, 300, width = 200, height = 500)
     text = '''
         Finally finished my finals, 
-        I want to have a sweet date with my boys'''
+            I want to have a sweet date with my boys'''
     
     drawImage(app.textBox1, 550, 412, align = 'center', width = 500, height = 300)
     lines = text.splitlines()
     for i in range (len(lines)):
         line = lines[i]
         drawLabel(line, 500, 350 + i + i * 30, size = 15, fill = 'black', font= 'monospace')
+    drawRect(700, 650, 200, 100, fill = 'pink', opacity = 80, border = 'lightCoral', borderWidth = 10)
+    drawLabel('Continue', 800, 700, fill = 'white', size = 30)    
+    instruction = '''
+              Remember that each boy has a different ideal type?
+              Try to put on the best fit for you boy
+              to get that boy fall for you! 
+              '''
+    instructionLines = instruction.splitlines()
+    for i in range (len(instructionLines)):
+        instructionLine = instructionLines[i]
+        drawLabel(instructionLine, 500, 200 + i * 30, size = 30, fill = 'green', border = 10, font = 'monospace')
 
+def drawPage4(app):
+    pass
 
 
 
