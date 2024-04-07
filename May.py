@@ -5,7 +5,7 @@ import os, pathlib
 def onAppStart(app): 
     app.width=1000
     app.height=800
-    app.backgroundImage = Image.open("hack112 image/background1.jpeg")
+    app.backgroundImage = Image.open("image/background1.jpeg")
     
 
 def redrawAll(app):
