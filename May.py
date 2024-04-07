@@ -16,6 +16,8 @@ def onAppStart(app):
     app.backgroundImage2 = CMUImage(app.backgroundImage2)
     # app.textBox = Image.open('photo/textbox1.PNG')
     # app.textBox = CMUImage(app.textBox)
+    app.coffeeBackground = Image.open('photo/coffeeBackground')
+    app.coffeeBackground = CMUImage(app.coffeeBackground)
     
     
 def redrawAll(app):
@@ -49,8 +51,17 @@ def drawPage1(app):
     drawLabel('Continue', 800, 700, fill = 'white', size = 30)
     
 def drawPage2(app): 
-
-
+    drawImage(app.coffeeBackground, 0, 0, width = 1000, height = 800)
+    drawImage(app.sue, 100, 300, width = 200, height = 500)
+    text = '''
+        It's carnival soon, 
+        I could make a pizza for my boy'''
+    
+    drawImage(app.textBox1, 550, 412, align = 'center', width = 500, height = 300)
+    lines = text.splitlines()
+    for i in range (len(lines)):
+        line = lines[i]
+        drawLabel(line, 500, 350 + i + i * 30, size = 15, fill = 'black', font= 'monospace')
 def onMousePress(app,mouseX,mouseY): 
     if 700<=mouseX<=900 and 650<=mouseY<=750: 
         app.opening=False
