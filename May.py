@@ -22,10 +22,10 @@ def drawPage1(app):
     
     drawImage(app.backgroundImage,0,0, width = 1000, height = 800)
     drawImage(app.sue, 100, 300, width = 200, height = 500)
-    drawImage(app.textBox1, 200, 300)
-    # drawLabel('112 is so hard, I wish that I could have a date.', 200, 300, fill = 'black', size = 50)
-    # drawRect(200, 300, )
-    
+    imageWidth, imageHeight = getImageSize(app.textBox1)
+    print(imageWidth, imageHeight)
+    drawImage(app.textBox1, 300, 350, width = 280, height = 100)
+
     
 
 def main():
