@@ -105,10 +105,11 @@ def drawPage3(app):
         drawLabel(instructionLine, 400, 100 + i * 30, size = 30, fill = 'darkGreen', bold = True, font = 'monospace')
 
 def drawPage4(app):
+
     pass
 
 def drawPage5(app): 
-    drawLabel('2b',300,300,size=50)
+    pass
 
 def onMousePress(app,mouseX,mouseY): 
     if 700<=mouseX<=900 and 650<=mouseY<=750: 
